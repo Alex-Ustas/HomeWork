@@ -23,7 +23,7 @@ string ThirdNum(int number)
     }
 
     int result = 1; // init dummy number
-    while (number / 100 > 0)
+    while (number > 100)
     {
         result = number % 10;
         number /= 10;
@@ -38,13 +38,13 @@ string ThirdNum(int number)
 // 1 -> нет
 void IsWeekEnd(int number)
 {
-    if (number>5)
+    if (number > 5)
     {
-        Console.WriteLine(number+"-й день недели - выходной");
+        Console.WriteLine(number + "-й день недели - выходной");
     }
     else
     {
-        Console.WriteLine(number+"-й день - будний день");
+        Console.WriteLine(number + "-й день - будний день");
     }
 }
 
