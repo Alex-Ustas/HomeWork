@@ -40,6 +40,7 @@ void Cubes(int number)
 }
 
 Console.Clear();
+
 Console.Write("Задача 19. Введите пятизначное число: ");
 int num = int.Parse(Console.ReadLine());
 int result = PolyNumber(num);
@@ -76,3 +77,27 @@ Console.WriteLine();
 Console.Write("Задача 23. Введите число N: ");
 num = int.Parse(Console.ReadLine());
 Cubes(num);
+Console.WriteLine();
+
+// Задача *. Напишите программу, которая на вход принимает радиус круга и находит его площадь,
+// округленную до целого числа, необходимо вывести максимальную цифру в полученном округленном
+// значении площади круга
+// 10 -> 4
+// 20 -> 7
+// 30 -> 8
+int MaxDigitInCircleArea(int radius)
+{
+    // S = piR^2
+    int s = (int)Math.Round(Math.PI * radius * radius, 0);
+    int max = 0;
+    while (s > 0)
+    {
+        if (max < s % 10) max = s % 10;
+        s /= 10;
+    }
+    return max;
+}
+
+Console.Write("Задача *. Введите радиус круга: ");
+num = int.Parse(Console.ReadLine());
+Console.WriteLine(MaxDigitInCircleArea(num));
